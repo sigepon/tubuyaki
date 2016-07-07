@@ -2,6 +2,13 @@ Rails.application.routes.draw do
   resources :posts
   root 'posts#index'
 
+  resources :users, only: [:new, :create] do
+    collection do
+      post :signin
+      delete :signout
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
