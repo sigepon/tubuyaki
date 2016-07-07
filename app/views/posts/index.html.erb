@@ -5,6 +5,7 @@
     <% @posts.each do |post| %>
     <tr>
         <td><%= post.body %></td>
+        <td><%= link_to 'destroy', post, method: :delete %></td>
     </tr>
     <% end %>
 </table>
