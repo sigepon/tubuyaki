@@ -12,6 +12,22 @@ class UsersController < ApplicationController
         end
     end
 
+    def signin
+        if login(params[:email], params[:password])
+            redirect_to root_path, nostice: 'ログインしました'
+        else
+            redirect_to root_path, alert: 'ログインに失敗しました'
+        end
+    end
+
+    def signout
+        if logout
+            redirect_to root_path, notice: 'ログアウトしました'
+        else
+            redirect_to root_path, alert: 'ログアウトに失敗しました'
+        end
+    end
+
     private
 
     def user_params
