@@ -1,0 +1,7 @@
+<%= form_for @post do |f| %>
+<p>
+    <%= f.label 'コメント' %>
+    <%= f.text_area :body %>
+</p>
+<%= f.submit '投稿' %>
+<% end %>
