@@ -9,7 +9,10 @@
     <tr>
         <td class="icon"><%= image_tag post.user.icon, width: 20, height: 20 %></td>
         <td class="name">「<%= post.user.name %>」</td>
-        <td class="body"><%= post.body %></td>
+        <td class="body">
+            <%= image_tag(post.picture_url, width:380) if post.picture.present? %><br>
+            <%= post.body %>
+        </td>
         <!-- <td class="created_at"><%= link_to post.created_at, post %></td> -->
         <% if logged_in? && current_user == post.user %>
         <td class="destroy"><%= link_to '×', post, method: :delete %></td>

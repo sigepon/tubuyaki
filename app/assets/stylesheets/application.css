@@ -17,3 +17,7 @@
     background-image: url('/assets/topCover.png');
     background-size: cover;
  }
+
+ img {
+    max-width: 100%;
+ }
