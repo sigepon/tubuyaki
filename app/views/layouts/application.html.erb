@@ -5,30 +5,69 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
-<div id="sub">
-    <% if logged_in? %>
-        <%= image_tag current_user.icon, width: 50, height: 50 %>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+<!--       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+      <a class="navbar-brand" href="#">SampleSite</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#">投稿する</a></li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container">
+    <div class="row">
+    <!-- <div id="sub"> -->
+    <div class="col-md-4">
+        <% if logged_in? %>
+        <%= image_tag current_user.icon, width: 80, height: 80 %>
         <%= current_user.name %>でログイン中
         <p>
-        <%= link_to 'ログアウト', signout_users_path, method: :delete %>
-    <% else %>
-        <div id="login_form">
-            <%= form_tag signin_users_path, class: 'user_form' do %>
-            <label for="email">email:</label><%= text_field_tag :email %><br />
-            <label for="password">password:</label><%= password_field_tag :password %><br />
-            <div class="actions"><%= submit_tag 'ログイン' %></div>
+            <%= link_to 'ログアウト', signout_users_path, method: :delete %>
+            <% else %>
+            <div id="login_form">
+                <%= form_tag signin_users_path, class: 'user_form' do %>
+                <label for="email">メールアドレス:</label> <%= text_field_tag :email %><br />
+                <label for="password">パスワード:</label> <%= password_field_tag :password %><br />
+                <div class="actions"><%= submit_tag 'ログイン' %></div>
+                <% end %>
+                <!-- <br> -->
+                <!-- <div <style="clear:both;"></div> -->
+                <div class="sinki_button"><%= link_to '新規登録', new_user_path %></div>
+            </div>
             <% end %>
-            <!-- <br> -->
-            <!-- <div <style="clear:both;"></div> -->
-            <div class="sinki_button"><%= link_to '新規登録', new_user_path %></div>
         </div>
-        <% end %>
-</div>
-<div id="main">
+
+
     <%= yield %>
+    </div>
 </div>
+
+
 </body>
 </html>

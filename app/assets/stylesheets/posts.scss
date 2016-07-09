@@ -1,7 +1,31 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@mixin radius($size) {
+
+
+    table {
+        margin-top: 20px;
+        border: solid 1px red;
+        tr {
+            height: 30px;
+            border: 1px solid #000;
+            background-color: #fff;
+            opacity: 0.9;
+        }
+
+        .destroy a {
+            text-decoration: none;
+            background-color: #b94a48;
+            color: #FFF;
+            padding: 2px;
+            //@include radius(2px);
+            border-radius: 2px;
+        }
+    }
+
+
+
+/*@mixin radius($size) {
     -webkit-border-radius: $size $size;
     -moz-border-radius: $size / $size;
     -khtml-border-radius: $size / $size;
@@ -78,14 +102,12 @@ $margin-L: 40px;
         border: 1px solid #CCC;
         padding: 5px 10px;
         color: #FFF;
-        /*background-color: #ff418c;*/
         background-color: #34beed;
         @include radius(4px);
     }
 }
 
 .sinki_button {
-    //height: 80px;
     a {
         &:hover {
             cursor: pointer;
@@ -114,4 +136,4 @@ form {
         margin-bottom: 10px;
     }
     br { clear: left; }
-}
+}*/
