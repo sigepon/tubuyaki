@@ -10,9 +10,10 @@
 
 @mixin box(){
     @include radius(5px);
-    background: #fff;
+    background: #dedede;
     opacity: 0.9;
-    color: #969696;
+    //color: #969696;
+    color: #333;
 }
 
 $margin-S: 10px;
@@ -77,8 +78,27 @@ $margin-L: 40px;
         border: 1px solid #CCC;
         padding: 5px 10px;
         color: #FFF;
-        background-color: #3b982b;
+        /*background-color: #ff418c;*/
+        background-color: #34beed;
         @include radius(4px);
+    }
+}
+
+.sinki_button {
+    //height: 80px;
+    a {
+        &:hover {
+            cursor: pointer;
+            background-color: #969696;
+        }
+        border: 1px solid #CCC;
+        padding: 7px 10px;
+        color: #FFF;
+        background-color: #ff418c;
+        @include radius(4px);
+        font-size: 10pt;
+        text-decoration: none;
+        margin-left: 8px;
     }
 }
 

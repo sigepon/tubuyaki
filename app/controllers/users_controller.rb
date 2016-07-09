@@ -5,27 +5,29 @@ class UsersController < ApplicationController
 
     def create
         user = User.new(user_params)
-        if user.save
-            redirect_to root_path, notice: 'ユーザを作成しました'
-        else
-            render new_user_path, alert: 'ユーザー登録に失敗しました'
-        end
+        user.save
+        redirect_to root_path
+    end
+
+    def edit
+       @post = Post.find(params[:id])
+    end
+
+    def update
+        @post = Post.find(params[:id])
+        @post.update(post_params)
+        # redirect_to root_path
+        redirect_to "/posts/#{@post.id}"
     end
 
     def signin
-        if login(params[:email], params[:password])
-            redirect_to root_path, nostice: 'ログインしました'
-        else
-            redirect_to root_path, alert: 'ログインに失敗しました'
-        end
+        login(params[:email], params[:password])
+        redirect_to root_path
     end
 
     def signout
-        if logout
-            redirect_to root_path, notice: 'ログアウトしました'
-        else
-            redirect_to root_path, alert: 'ログアウトに失敗しました'
-        end
+        logout
+        redirect_to root_path
     end
 
     private

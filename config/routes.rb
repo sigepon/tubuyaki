@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :posts
   root 'posts#index'
 
-  resources :users, only: [:new, :create] do
+  resources :users, only: [:new, :create, :edit] do
     collection do
       post :signin
       delete :signout
