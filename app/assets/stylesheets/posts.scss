@@ -2,138 +2,191 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-    table {
-        margin-top: 20px;
-        border: solid 1px red;
-        tr {
-            height: 30px;
-            border: 1px solid #000;
-            background-color: #fff;
-            opacity: 0.9;
-        }
-
-        .destroy a {
-            text-decoration: none;
-            background-color: #b94a48;
-            color: #FFF;
-            padding: 2px;
-            //@include radius(2px);
-            border-radius: 2px;
-        }
-    }
-
-
-
-/*@mixin radius($size) {
+@mixin radius($size) {
     -webkit-border-radius: $size $size;
     -moz-border-radius: $size / $size;
     -khtml-border-radius: $size / $size;
     border-radius: $size / $size;
 }
-
-@mixin box(){
-    @include radius(5px);
-    background: #dedede;
+header{
+    width: 100%;
+    height: 200px;
+    /*background-color: #57afe6;*/
+    background-color: #fff;
     opacity: 0.9;
-    //color: #969696;
-    color: #333;
-}
+    border-bottom: solid 1px #ccc;
+    margin-bottom: 60px;
 
-$margin-S: 10px;
-$margin-M: 20px;
-$margin-L: 40px;
-
-#sub{
-    @include box();
-    min-width: 20px;
-    float: left;
-    padding: 20px;
-    margin-right: $margin-M;
-    margin-bottom: $margin-M;
-}
-
-#main {
-    @include box();
-    width: 60%;
-    float: left;
-    padding: 20px;
-
-    @include radius(5px);
-
-    .field {
-        textarea {
-            border: 1px solid #969696;
-            @include radius(4px);
+        .fa.fa-users{
+            color: #dedede;
         }
-    }
+
+        h1{
+            margin: 30px;
+        }
+
+        h2{
+            font-size: 18px;
+            position: relative;
+            top: -10px;
+            text-align: center;
+            line-height: 1.7em;
+        }
+}
+.fa.fa-trash-o{
+    font-size:25pt;
+    color: #777;
+}
+.formArea{
+    width: 95%;
+    margin: 0 auto;
+
+        textarea{
+            width: 100%;
+            height: 180px;
+            border: solid 1px #ccc;
+        }
+}
+.button1{
+    width: 150px;
+    margin: 40px auto;
+}
+.button1 input{
+    font-size: 1.4em;
+    font-weight: bold;
+    /*padding: 10px 40px;*/
+    width: 100%;
+    padding: 8px 0;
+    background-color: #34beed;
+    color: #fff;
+    border-style: none;
+    @include radius(5px);
+}
+.button1 input:hover{
+    background-color: #999;
+    color:#fff;
+}
+.button2{
+    width: 150px;
+    margin: 30px auto;
+}
+.button2 input{
+    font-size: 1.4em;
+    font-weight: bold;
+    /*padding: 10px 40px;*/
+    width: 100%;
+    padding: 8px 0;
+    background-color: #34beed;
+    color: #fff;
+    border-style: none;
+    @include radius(5px);
+}
+.button2 input:hover{
+    background-color: #999;
+    color:#fff;
+}
+.button3{
+    margin: 20px auto;
+    width:150px;
+    background-color: #ff418c;
+    border-style: none;
+    height: 40px;
+    @include radius(5px);
+}
+.button3 a{
+    display: block;
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;;
+    height:40px;
+}
+.button3 a:hover{
+    background-color: #999;
+    color:#fff;
+    text-decoration:none;
+    @include radius(5px);
+}
+#top{
     table {
         margin-top: 20px;
+        margin-bottom: 90px;
+        width: 95%;
+
         tr {
-            height: 30px;
-            border: 1px solid #000;
+            background-color: #fff;
+            opacity: 0.9;
         }
-        .destroy a {
-            text-decoration: none;
-            background-color: #b94a48;
-            color: #FFF;
-            padding: 2px;
-            @include radius(2px);
+        .body{
+            padding-bottom: 20px;
+
+            p{
+                margin-top: 20px;
+            }
         }
-    }
-    a {
-        color: #969696;
-        &:visited {
-            color: #666;
-        }
-        &:hover {
-            color: #FFF;
-            background-color: #3b982b;
+        .trash{
+            padding-bottom: 60px;
+            padding-left:20px;
         }
     }
 }
-
-.actions {
-    input {
-        &:hover {
-            cursor: pointer;
-            background-color: #969696;
-        }
-        border: 1px solid #CCC;
-        padding: 5px 10px;
-        color: #FFF;
-        background-color: #34beed;
-        @include radius(4px);
+#user{
+    .label{
+        width:20%;
+        color: #333;
+        font-size: 14px;
+        height: 45px;
+        line-height: 45px;
     }
+    .field{
+        width: 70%;
+    }
+    tr{
+        height: 45px;
+    }
+    .box1{
+        width: 100%;
+        border: solid 1px #ccc;
+    }
+
+}
+/* PageTop Style */
+.pagetop {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 80px;
+}
+.pagetop a {
+    display: block;
+    background-color: #ccc;
+    text-align: center;
+    color: #222;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 20px;
+    @include radius(3px);
 }
 
-.sinki_button {
-    a {
-        &:hover {
-            cursor: pointer;
-            background-color: #969696;
-        }
-        border: 1px solid #CCC;
-        padding: 7px 10px;
-        color: #FFF;
-        background-color: #ff418c;
-        @include radius(4px);
-        font-size: 10pt;
-        text-decoration: none;
-        margin-left: 8px;
-    }
+.pagetop a:hover {
+    display: block;
+    background-color: #222;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding:20px;
 }
 
-form {
-    label {
-        text-align: right;
-        padding-right: 15px;
-        width: 50px;
+.fa.fa-arrow-up{
+    font-size: 20pt;
+}
+
+/* レスポンシブ Style */
+@media screen and (min-width: 768px) {
+    .formArea{
+        width: 70%;
+            textarea{
+        }
     }
-    label,input {
-        display: block;
-        float: left;
-        margin-bottom: 10px;
-    }
-    br { clear: left; }
-}*/
+}

@@ -1,9 +1,9 @@
 <%= form_for @post do |f| %>
-<p>
-    <%= f.label 'コメント' %>
-    <%= f.text_area :body %><br>
-
-    <%= f.file_field :picture %>
-</p>
-<%= f.submit '投稿' %>
+<div class="formArea">
+    <%= f.text_area :body %>
+    <p style="margin:20px;">
+        <%= f.file_field :picture %>
+    </p>
+</div>
+<div class="button1"><%= f.submit '投 稿' %></div>
 <% end %>

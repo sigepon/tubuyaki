@@ -5,6 +5,7 @@
 <% end %>
 
 <h2>投稿一覧</h2>
+<div id="top">
 <table>
     <% @posts.each do |post| %>
     <tr>
@@ -15,15 +16,21 @@
         <!-- <td class="name">「<%= post.user.name %>」</td> -->
         <td class="body">
             <%= image_tag(post.picture_url, width:380) if post.picture.present? %><br>
-            <%= post.body %>
+            <p><%= post.body %></p>
         </td>
-        <!-- <td class="created_at"><%= link_to post.created_at, post %></td> -->
     </tr>
     <tr>
         <% if logged_in? && current_user == post.user %>
-            <td class="destroy"><%= link_to '×', post, method: :delete %></td>
+<!--             <td><%#= link_to post_path(post), method: :delete  do %>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <%# end %>
+            </td> -->
+            <td colspan="3" class="trash">
+                <%= link_to(content_tag(:i, '', class: 'fa fa-trash-o'), post_path(post), :method => :delete) %>
+            </td>
         <% end %>
     </tr>
     <% end %>
 </table>
 </div>
+</div><!-- /top -->
